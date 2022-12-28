@@ -6,7 +6,7 @@ const App = () => {
 
   useEffect(() => {
     const getQuote = async () => {
-      const url = 'https://quoran-api.vercel.app';
+      const url = 'https://achecitacoes-api.vercel.app';
       
       const quote = await fetch(url);
       const json = await quote.json();
@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     const requestOperation = async () => {
-      const url = 'https://quoran-api.vercel.app/author';
+      const url = 'https://achecitacoes-api.vercel.app/author';
       const data = { author: "Xupeta" };
 
       const request = await fetch(url, {
