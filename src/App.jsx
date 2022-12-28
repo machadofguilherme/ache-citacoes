@@ -21,7 +21,7 @@ const App = () => {
   useEffect(() => {
     const requestOperation = async () => {
       const url = 'https://achecitacoes-api.vercel.app/author';
-      const data = { author: "Xupeta" };
+      const data = { author: "Confúcio" };
 
       const request = await fetch(url, {
         method: 'POST',
