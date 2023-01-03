@@ -1,46 +1,37 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useContext } from 'react';
+import Footer from './components/Footer';
+
+import Header from './components/Header';
+import PersonalQuote from './components/PersonalQuote';
+import Quote from './components/Quote';
+import Search from './components/Search';
+import AppContext from './context/AppContext';
 
 const App = () => {
-  const [quote, setQuote] = useState({});
-
-  useEffect(() => {
-    const getQuote = async () => {
-      const url = 'https://achecitacoes-api.vercel.app';
-      
-      const quote = await fetch(url);
-      const json = await quote.json();
-      setQuote(json);
-      return json;
-    }
-
-    getQuote();
-  }, []);
-
-
-  useEffect(() => {
-    const requestOperation = async () => {
-      const url = 'https://achecitacoes-api.vercel.app/author';
-      const data = { author: "Confúcio" };
-
-      const request = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      const json = await request.json();
-      console.log(json);
-    }
-
-    requestOperation();
-  }, []);
+  const { isChoice } = useContext(AppContext);
 
   return (
-    <span>
-      <h3>{ quote.quote }</h3>
-      <p>{ quote.author}</p>
-    </span>
+    <>
+      <main className='main'>
+        <section className='main-section'>
+          <Header />
+
+          {
+            !isChoice
+              ? (
+                  <>
+                    <Search />
+                    <Quote />
+                  </>
+                )
+              :
+            <PersonalQuote />
+          }
+
+        </section>
+      </main>
+      <Footer />
+    </>
   )
 }
 

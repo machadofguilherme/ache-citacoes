@@ -1,0 +1,44 @@
+.personal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.personal h3 {
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.personal p {
+  font-weight: 700;
+}
+
+.personal button {
+  width: 150px;
+  height: 35px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #181D31;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 500ms;
+}
+
+.personal button:hover {
+  background-color: #181D31;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 400px) {
+  .personal button {
+    font-size: .8rem;
+    width: 100px;
+    height: 25px;
+  }
+}

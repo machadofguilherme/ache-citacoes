@@ -1,0 +1,31 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  text-align: center;
+}
+
+.quote h3 {
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.quote p {
+  font-weight: 700;
+}
+
+.quote-icon {
+  font-size: .8rem;
+}
+
+@media screen and (max-width: 590px) {
+  .quote {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .quote {
+    width: 300px;
+  }
+}
